@@ -1,8 +1,17 @@
 {
-  "extends": "@wix/cli-app/tsconfig.app.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "types": ["react"]
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",        // Or "NodeNext" if you prefer
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node"],                    // <-- add this after installing @types/node
+    "baseUrl": "."
   },
-  "include": ["src"]
+  "include": ["src", "vite-env.d.ts"],     // adjust for your project structure
+  "exclude": ["node_modules", "dist"]
 }
